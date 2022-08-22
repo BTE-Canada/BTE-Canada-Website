@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Join The Server";
+}
+
+<div id="copy-toast" style="display: none">
+    Copied to Clipboard!
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center">Welcome to your first step in experiancing the beautiful country of Canada</h2>
+    <br/>
+
+    <div class="d-flex justify-content-center server-join">
+        <div>Server IP:</div>
+        <div onclick="copyIP()">
+            <span class="server-ip">btecanada.net</span>
+        </div>
+        
+        <div class="copy-help text-muted">(Click to copy to clipboard)</div>
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+
+        function copyIP() {
+            navigator.clipboard.writeText('btecanada.net')
+
+            $("#copy-toast").show();
+
+            setTimeout(function() {
+                $("#copy-toast").hide();
+            }, 2000);
+        }
+
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BTECanada.Models.BuilderResourcesCategory>
+
+<style>
+
+    .section {
+        border-top: 1px solid black;
+    }
+
+    .section-content, .section h2 {
+        padding: 6px 10px;
+    }
+
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+
+</style>
+
+<div class="container-lg">
+    
+    <h1 class="my-4">Builder Resources</h1>
+
+    @if(Model != null) 
+    {
+        @foreach(var category in Model) {
+
+            <div class="section">
+                <h2>@Html.DisplayFor(modelItem => category.Name)</h2>
+                <div class="section-content">
+                    
+                    @foreach(var item in category.BuilderResources!) {
+
+                        <button class="accordion">@Html.DisplayFor(modelItem => item.Title)</button>
+                        <div class="panel">
+                            @Html.DisplayFor(modelItem => item.Content)
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+        }
+    }
+
+    @if(Model == null) {
+        <h2>BAD</h2>
+    }
+
+</div>

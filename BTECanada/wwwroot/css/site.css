@@ -1,0 +1,151 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'PT Sans', Arial, sans-serif;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../font/minecraft/minecraft.woff2') format('woff2'), url('../font/minecraft/minecraft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Header */
+.logo-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Minecraft;
+}
+
+.logo-link img {
+    width: 60px;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: block;
+}
+
+/* Home Page */
+.hero {
+    background-image: url('../images/cities/toronto-city-hall.png');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+    height: calc(100vh - 86px);
+    color: white;
+}
+
+.hero .logo {
+    font-weight: bold;
+    font-size: 6rem;
+    margin-bottom: 6rem;
+    max-width: 70vw;
+}
+
+.hero .logo img {
+    width: 12rem;
+    margin-right: 20px;
+}
+
+.hero .cta {
+    text-align: center;
+}
+
+.hero .cta .cta-text {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* Buttons */
+.cta-button {
+    padding: 15px 80px;
+    background: #fff;
+    margin-top: 40px;
+
+    color: #000;
+    font-weight: bold;
+    line-height: inherit;
+    border-radius: 0;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    color: #000;
+}
+
+#copy-toast {
+    width: 200px;
+    position: absolute;
+    font-size: 1.25rem;
+    top: 30px;
+    left: calc(50vw - 150px);
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+    animation: fade 2s;
+    display: none;
+}
+
+@keyframes fade {
+    0%,100% {
+        opacity: 0;
+        display: none;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Join */
+.server-join {
+    font-size: 1.5rem;
+}
+
+.server-join div {
+    margin-right: 10px;
+}
+
+.server-ip {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.copy-help {
+    font-size: 1rem;
+    font-style: italic;
+    align-self: center;
+}
