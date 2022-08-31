@@ -1,29 +1,21 @@
 ﻿using BTECanada.Models;
-using MySql.Data.EntityFramework;
-using System.Data.Common;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace BTECanada.Data
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class AppDataContext : DbContext
     {
-        public DbSet<BuilderResources> BuilderResources { get; set; }
-        public DbSet<BuilderResourcesCategory> BuilderResourcesCategory { get; set; }
+        public virtual DbSet<BuilderResources> BuilderResources { get; set; }
+        public virtual DbSet<BuilderResourcesCategory> BuilderResourcesCategory { get; set; }
 
-        public AppDataContext() : base()
+        public AppDataContext(DbContextOptions<AppDataContext> options) : base(options)
         {
 
         }
 
-        public AppDataContext(DbConnection existingConection, bool contextOwnsConection) : base(existingConection, contextOwnsConection)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-        }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+            
         }
     }
 }

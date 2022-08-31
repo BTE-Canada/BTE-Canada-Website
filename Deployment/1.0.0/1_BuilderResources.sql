@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS BuilderResourcesCategory;
 CREATE TABLE BuilderResourcesCategory (
     Id int NOT NULL AUTO_INCREMENT,
     Name varchar(255) NOT NULL,
-    Decsription varchar(255) NULL,
+    Description varchar(255) NULL,
     PRIMARY KEY (Id)
 );
 
@@ -13,5 +13,7 @@ CREATE TABLE BuilderResources (
     Id int NOT NULL AUTO_INCREMENT,
     Title varchar(255) NOT NULL,
     Content varchar(16000) NULL,
-    PRIMARY KEY (Id)
+    CategoryId int NOT NULL,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (CategoryId) REFERENCES BuilderResourcesCategory(Id)
 );

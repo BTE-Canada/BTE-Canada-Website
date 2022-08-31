@@ -4,13 +4,13 @@ namespace BTECanada.Data
 {
     public class SampleData
     {
-        public static List<BuilderResourcesCategory> categories = new()
+        public static ICollection<BuilderResourcesCategory> categories = new List<BuilderResourcesCategory>()
         {
             new()
             {
                 Id = 1,
                 Name = "Mods",
-                BuilderResources = new()
+                BuilderResources = new List<BuilderResources>()
                 {
                     new()
                     {
@@ -30,7 +30,7 @@ namespace BTECanada.Data
             {
                 Id = 2,
                 Name = "World Edit",
-                BuilderResources = new()
+                BuilderResources = new List<BuilderResources>()
                 {
                     new()
                     {
